@@ -279,5 +279,15 @@ Certainly! Here are some multiple-choice questions covering topics on NumPy and 
    
    **Explanation:** The `query()` function in Pandas is used to filter rows based on specific conditions. It allows you to write expressions in a SQL-like syntax to perform row selection.
 
-10. Question: What is the purpose of the `pd.merge()` function in Pandas?
-    - A) Combining two or
+10. Question: What is the purpose of the pd.merge() function in Pandas?
+
+A) Combining two or more DataFrames based on a common key
+B) Computing the mean value of numerical columns in a DataFrame
+C) Sorting the DataFrame rows based on specific criteria
+D) Removing duplicate rows from the DataFrame
+Answer: A) Combining two or more DataFrames based on a common key
+Explanation: The pd.merge() function in Pandas is used for merging (joining) two or more DataFrames based on a common key or index.
+
+
+![image](https://github.com/rohayanti/myJupyterNotebook/assets/72117308/3b422108-a59c-4c80-a1c3-91a8cf142889)
+
