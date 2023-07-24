@@ -88,3 +88,59 @@ my_array = np.array([1, 2, 3, 4, 5])
 The primary advantage of using homogeneous data structures like NumPy arrays is their efficiency in terms of memory usage and computational performance. Since all elements have the same data type, NumPy can leverage optimized low-level routines for mathematical operations, making numerical computations much faster compared to using heterogeneous data structures like Python lists.
 
 In summary, the relation between homogeneous data structures and NumPy in Python is that NumPy's ndarray provides a powerful, homogeneous data structure for handling numerical data. This homogeneous nature, along with NumPy's extensive set of numerical and mathematical functions, makes it a fundamental tool for various fields, including scientific computing, data analysis, and machine learning.
+
+Sure! Here's the structure of the questions for a "Deep Learning Certificate Professional" written in Markdown (md) format:
+
+## Structure of Questions for Deep Learning Certificate Professional
+
+1. **Multiple Choice Questions**
+
+   ```
+   Question 1: What is the fundamental building block of a neural network?
+   A) Neuron
+   B) Perceptron
+   C) Layer
+   D) Tensor
+
+   Question 2: Which activation function is commonly used for binary classification tasks in deep learning?
+   A) Sigmoid
+   B) ReLU (Rectified Linear Unit)
+   C) Tanh (Hyperbolic Tangent)
+   D) Softmax
+   ```
+
+2. **True/False Questions**
+
+   ```
+   Question 3: True or False: The purpose of the pooling layer in a Convolutional Neural Network (CNN) is to perform feature extraction.
+   ```
+
+3. **Fill in the Blanks**
+
+   ```
+   Question 4: The ___________ function is used to combat the vanishing gradient problem in deep neural networks.
+   ```
+
+4. **Matching Questions**
+
+   ```
+   Question 5: Match the following activation functions with their descriptions:
+   1. Sigmoid           a) Commonly used for binary classification tasks.
+   2. ReLU              b) Avoids the vanishing gradient problem.
+   3. Tanh              c) Produces probabilities between 0 and 1.
+   4. Softmax           d) Produces values between -1 and 1.
+   ```
+
+5. **Code-based Questions**
+
+   ```
+   Question 6: Write Python code to define a simple feedforward neural network with one hidden layer using TensorFlow/Keras.
+   ```
+
+6. **Scenario-based Questions**
+
+   ```
+   Question 7: You are given a dataset of images, and your task is to build a convolutional neural network (CNN) for image classification. Explain the steps you would take to preprocess the data and design the CNN architecture.
+   ```
+
+Please note that the actual content of the questions will vary depending on the certification provider and the depth of the certification program. The questions provided here are examples and may not reflect the exact questions in a real certification exam. Candidates should review the specific syllabus or guidelines provided by the certifying organization to understand the topics covered in the certification and adequately prepare for the exam.
