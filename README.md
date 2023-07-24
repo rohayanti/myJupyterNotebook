@@ -184,3 +184,100 @@ df = pd.read_csv('data.csv')
 
 Pandas is an essential library for any data-related work in Python and is often used in conjunction with other data science libraries like NumPy, Matplotlib, and scikit-learn to perform comprehensive data analysis and machine learning tasks.
 ```
+
+Certainly! Here are some multiple-choice questions covering topics on NumPy and Pandas for a "Deep Learning Certificate Professional" in Markdown format, along with the answers and explanations:
+
+## Multiple Choice Questions - NumPy and Pandas
+
+1. Question: In Python, which library is commonly used for numerical computing and working with arrays?
+   - A) NumPy
+   - B) Pandas
+   - C) Matplotlib
+   - D) SciPy
+
+   **Answer: A) NumPy**
+   
+   **Explanation:** NumPy is a widely used library in Python for numerical computing and array manipulation. It provides support for multi-dimensional arrays and various mathematical functions for efficient numerical operations.
+
+2. Question: What is the primary data structure used in NumPy to store multi-dimensional arrays?
+   - A) List
+   - B) DataFrame
+   - C) Array
+   - D) Dictionary
+
+   **Answer: C) Array**
+   
+   **Explanation:** The primary data structure used in NumPy is the multi-dimensional array (ndarray), which provides a homogeneous and fixed-size array for storing elements of the same data type.
+
+3. Question: How do you import NumPy in Python?
+   - A) `import numpy as np`
+   - B) `import np as numpy`
+   - C) `from numpy import *`
+   - D) `import numpy`
+
+   **Answer: A) `import numpy as np`**
+   
+   **Explanation:** The standard convention for importing NumPy in Python is to use the `import numpy as np` statement. This allows you to access NumPy functions and objects using the alias `np`.
+
+4. Question: What does the NumPy function `np.arange(5)` return?
+   - A) `[0, 1, 2, 3, 4]`
+   - B) `array([0, 1, 2, 3, 4])`
+   - C) `array([1, 2, 3, 4, 5])`
+   - D) `[1, 2, 3, 4, 5]`
+
+   **Answer: A) `[0, 1, 2, 3, 4]`**
+   
+   **Explanation:** The `np.arange(5)` function generates an array with values from 0 to 4 (exclusive), resulting in `[0, 1, 2, 3, 4]`.
+
+5. Question: How do you create a 2D NumPy array with values ranging from 0 to 9?
+   - A) `np.array([0, 1, 2], [3, 4, 5], [6, 7, 8])`
+   - B) `np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])`
+   - C) `np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])`
+   - D) `np.array([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]])`
+
+   **Answer: B) `np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])**
+   
+   **Explanation:** The correct way to create a 2D NumPy array with values ranging from 0 to 9 is using `np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])`.
+
+6. Question: What is the purpose of broadcasting in NumPy?
+   - A) Optimizing array operations for faster computation
+   - B) Adjusting the shape of arrays for element-wise operations
+   - C) Converting arrays into matrices for linear algebra
+   - D) Improving memory efficiency by reducing array size
+
+   **Answer: B) Adjusting the shape of arrays for element-wise operations**
+   
+   **Explanation:** Broadcasting in NumPy is a feature that allows arrays with different shapes to be used together in element-wise operations. It automatically adjusts the shape of smaller arrays to match the shape of larger arrays, facilitating element-wise operations without the need for explicit reshaping.
+
+7. Question: In Pandas, what is the primary data structure used for storing and manipulating data?
+   - A) DataFrame
+   - B) Series
+   - C) Array
+   - D) List
+
+   **Answer: A) DataFrame**
+   
+   **Explanation:** In Pandas, the primary data structure used for storing and manipulating data is the DataFrame. It is a 2-dimensional tabular data structure with labeled rows and columns, similar to a spreadsheet or SQL table.
+
+8. Question: How do you select a specific column named "Age" from a Pandas DataFrame named "df"?
+   - A) `df["Age"]`
+   - B) `df.column("Age")`
+   - C) `df.column.Age`
+   - D) `df[Age]`
+
+   **Answer: A) `df["Age"]`**
+   
+   **Explanation:** To select a specific column from a Pandas DataFrame, you can use the syntax `df["column_name"]`, where "column_name" is the name of the column you want to select.
+
+9. Question: Which Pandas function is used to filter rows based on specific conditions?
+   - A) `filter_rows()`
+   - B) `select()`
+   - C) `query()`
+   - D) `filter()`
+
+   **Answer: C) `query()`**
+   
+   **Explanation:** The `query()` function in Pandas is used to filter rows based on specific conditions. It allows you to write expressions in a SQL-like syntax to perform row selection.
+
+10. Question: What is the purpose of the `pd.merge()` function in Pandas?
+    - A) Combining two or
