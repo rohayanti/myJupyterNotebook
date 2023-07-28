@@ -1,293 +1,166 @@
-# myJupyterNotebook
+# Keras Syntax Basics
 
-# Day 1 Deep Learning Training - 24/7/2023
+With TensorFlow 2.0 , Keras is now the main API choice. Let's work through a simple regression project to understand the basics of the Keras syntax and adding layers.
+## The Data
 
-## Committing Machine Learning Code to GitHub CodeSpace
+To learn the basic syntax of Keras, we will use a very simple fake data set, in the subsequent lectures we will focus on real datasets, along with feature engineering! For now, let's focus on the syntax of TensorFlow 2.0.
 
-### Step 1: Set Up Git and GitHub
-1. Install Git on your local machine if you haven't already. You can download it from [here](https://git-scm.com/downloads) and follow the installation instructions for your operating system.
+Let's pretend this data are measurements of some rare gem stones, with 2 measurement features and a sale price. Our final goal would be to try to predict the sale price of a new gem stone we just mined from the ground, in order to try to set a fair price in the market.
 
-2. Create a GitHub account if you don't have one. Go to [github.com](https://github.com/) and sign up for a free account.
-
-### Step 2: Initialize a Git Repository
-1. Open your Jupyter Notebook and navigate to the directory where your Machine Learning code is located.
-
-2. Open a new terminal within Jupyter Notebook. You can do this by clicking on the "New" button and selecting "Terminal."
-
-3. In the terminal, navigate to your Machine Learning code directory using the `cd` command.
-
-4. Initialize a Git repository using the following command:
-   ```bash
-   git init
-   ```
-
-### Step 3: Add and Commit your Code
-1. Add all the files related to your Machine Learning project to the Git repository. You can use the following command to add all files:
-   ```bash
-   git add .
-   ```
-   Alternatively, if you want to add specific files, you can use:
-   ```bash
-   git add file1.ipynb file2.py data.csv
-   ```
-
-2. Commit the changes with a meaningful commit message that describes the changes you made:
-   ```bash
-   git commit -m "Add Machine Learning code"
-   ```
-
-### Step 4: Set Up Your GitHub Repository
-1. Go to GitHub and create a new repository. You can do this by clicking on the "New" button on the main page of your GitHub account.
-
-2. Give your repository a name and optionally add a description.
-
-3. Make sure to leave the "Initialize this repository with a README" option unchecked since you already have existing code.
-
-4. Click on "Create repository" to create the new repository on GitHub.
-
-### Step 5: Link Your Local Repository to the Remote Repository
-1. In your terminal, add the URL of your GitHub repository as the remote origin:
-   ```bash
-   git remote add origin <repository_url.git>
-   ```
-   For example:
-   ```bash
-   git remote add origin https://github.com/yourusername/your-repository.git
-   ```
-
-2. Push the committed changes to your GitHub repository:
-   ```bash
-   git push -u origin master
-   ```
-
-   Note: You may need to enter your GitHub credentials to complete the push.
-
-Once you've completed these steps, your Machine Learning code will be committed and pushed to your GitHub repository. You can access and manage your code from there in GitHub's CodeSpace environment.
-Remember to keep your sensitive information secure and avoid sharing any confidential data in public repositories. If you're working with private information, consider using environment variables or other methods to keep your code secure.
-
-## Homogeneous Data Structure in Python and its Relation with NumPy
-
-In Python, a **homogeneous data structure** refers to a collection or container that can hold elements of the same data type. This means that all the elements within the structure must have the same type, such as integers, floats, strings, or any other specific data type. Homogeneous data structures ensure consistent memory layout, making them efficient and suitable for many computational tasks.
-
-A common example of a heterogeneous data structure in Python is the **list**. Lists can contain elements of different data types:
-
-```python
-# Heterogeneous list
-my_list = [1, 2, "hello", 3.14]
-```
-
-On the other hand, **NumPy**, which stands for Numerical Python, provides a powerful library for numerical computing in Python. One of the key features of NumPy is the introduction of a **homogeneous data structure** called **`numpy.array`** (also known as ndarray). NumPy arrays allow you to create arrays with elements of the same data type:
-
-```python
-import numpy as np
-
-# Homogeneous NumPy array
-my_array = np.array([1, 2, 3, 4, 5])
-```
-
-The primary advantage of using homogeneous data structures like NumPy arrays is their efficiency in terms of memory usage and computational performance. Since all elements have the same data type, NumPy can leverage optimized low-level routines for mathematical operations, making numerical computations much faster compared to using heterogeneous data structures like Python lists.
-
-In summary, the relation between homogeneous data structures and NumPy in Python is that NumPy's ndarray provides a powerful, homogeneous data structure for handling numerical data. This homogeneous nature, along with NumPy's extensive set of numerical and mathematical functions, makes it a fundamental tool for various fields, including scientific computing, data analysis, and machine learning.
-
-Sure! Here's the structure of the questions for a "Deep Learning Certificate Professional" written in Markdown (md) format:
-
-## Structure of Questions for Deep Learning Certificate Professional
-
-1. **Multiple Choice Questions**
-
-   ```
-   Question 1: What is the fundamental building block of a neural network?
-   A) Neuron
-   B) Perceptron
-   C) Layer
-   D) Tensor
-
-   Question 2: Which activation function is commonly used for binary classification tasks in deep learning?
-   A) Sigmoid
-   B) ReLU (Rectified Linear Unit)
-   C) Tanh (Hyperbolic Tangent)
-   D) Softmax
-   ```
-
-2. **True/False Questions**
-
-   ```
-   Question 3: True or False: The purpose of the pooling layer in a Convolutional Neural Network (CNN) is to perform feature extraction.
-   ```
-
-3. **Fill in the Blanks**
-
-   ```
-   Question 4: The ___________ function is used to combat the vanishing gradient problem in deep neural networks.
-   ```
-
-4. **Matching Questions**
-
-   ```
-   Question 5: Match the following activation functions with their descriptions:
-   1. Sigmoid           a) Commonly used for binary classification tasks.
-   2. ReLU              b) Avoids the vanishing gradient problem.
-   3. Tanh              c) Produces probabilities between 0 and 1.
-   4. Softmax           d) Produces values between -1 and 1.
-   ```
-
-5. **Code-based Questions**
-
-   ```
-   Question 6: Write Python code to define a simple feedforward neural network with one hidden layer using TensorFlow/Keras.
-   ```
-
-6. **Scenario-based Questions**
-
-   ```
-   Question 7: You are given a dataset of images, and your task is to build a convolutional neural network (CNN) for image classification. Explain the steps you would take to preprocess the data and design the CNN architecture.
-   ```
-
-Sure, here's the text in Markdown (md) format:
-
-```
-Pandas is a popular open-source Python library that provides powerful data manipulation and analysis tools. It is widely used in data science and data analysis workflows due to its simplicity and flexibility. The name "Pandas" is derived from "panel data," which refers to multidimensional data sets commonly used in statistics and econometrics.
-
-**Key features of Pandas** include:
-
-1. **Data Structures:** Pandas introduces two main data structures: Series and DataFrame.
-   - *Series:* A one-dimensional labeled array capable of holding various data types (e.g., integers, strings, floats, etc.). It is like a labeled list or array.
-   - *DataFrame:* A two-dimensional labeled data structure, similar to a spreadsheet or SQL table, that consists of rows and columns.
-
-2. **Data Manipulation:** Pandas provides a wide range of functions and methods for filtering, selecting, transforming, and cleaning data. It enables users to reshape and pivot data easily.
-
-3. **Data Input/Output:** Pandas supports reading and writing data from various file formats such as CSV, Excel, SQL databases, and more.
-
-4. **Missing Data Handling:** Pandas offers tools to handle missing data gracefully, making data cleaning and preprocessing tasks more straightforward.
-
-5. **Time Series Support:** Pandas has excellent support for working with time series data, including powerful date and time functionalities.
-
-6. **Merge and Join:** Pandas facilitates merging and joining data from different sources using SQL-like operations.
-
-To use Pandas, you need to import it into your Python script or Jupyter Notebook. The standard way to import Pandas is as follows:
-
-```python
+### Load the Data
 import pandas as pd
-```
+df = pd.read_csv('fake_reg.csv')
+df.head()
+### Explore the data
 
-Once imported, you can use Pandas to load, manipulate, and analyze data efficiently. For example, reading a CSV file and creating a DataFrame can be done as follows:
+Let's take a quick look, we should see strong correlation between the features and the "price" of this made up product.
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.pairplot(df)
+Feel free to visualize more, but this data is fake, so we will focus on feature engineering and exploratory data analysis later on in the course in much more detail!
+### Test/Train Split
+from sklearn.model_selection import train_test_split
+# Convert Pandas to Numpy for Keras
 
-```python
-import pandas as pd
+# Features
+X = df[['feature1','feature2']].values
 
-# Read data from a CSV file into a DataFrame
-df = pd.read_csv('data.csv')
+# Label
+y = df['price'].values
 
-# Perform data analysis and manipulation on the DataFrame
-# (e.g., selecting columns, filtering rows, calculating statistics, etc.)
-```
+# Split
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=42)
+X_train.shape
+X_test.shape
+y_train.shape
+y_test.shape
+## Normalizing/Scaling the Data
 
-Pandas is an essential library for any data-related work in Python and is often used in conjunction with other data science libraries like NumPy, Matplotlib, and scikit-learn to perform comprehensive data analysis and machine learning tasks.
-```
+We scale the feature data.
 
-Certainly! Here are some multiple-choice questions covering topics on NumPy and Pandas for a "Deep Learning Certificate Professional" in Markdown format, along with the answers and explanations:
-
-## Multiple Choice Questions - NumPy and Pandas
-
-1. Question: In Python, which library is commonly used for numerical computing and working with arrays?
-   - A) NumPy
-   - B) Pandas
-   - C) Matplotlib
-   - D) SciPy
-
-   **Answer: A) NumPy**
-   
-   **Explanation:** NumPy is a widely used library in Python for numerical computing and array manipulation. It provides support for multi-dimensional arrays and various mathematical functions for efficient numerical operations.
-
-2. Question: What is the primary data structure used in NumPy to store multi-dimensional arrays?
-   - A) List
-   - B) DataFrame
-   - C) Array
-   - D) Dictionary
-
-   **Answer: C) Array**
-   
-   **Explanation:** The primary data structure used in NumPy is the multi-dimensional array (ndarray), which provides a homogeneous and fixed-size array for storing elements of the same data type.
-
-3. Question: How do you import NumPy in Python?
-   - A) `import numpy as np`
-   - B) `import np as numpy`
-   - C) `from numpy import *`
-   - D) `import numpy`
-
-   **Answer: A) `import numpy as np`**
-   
-   **Explanation:** The standard convention for importing NumPy in Python is to use the `import numpy as np` statement. This allows you to access NumPy functions and objects using the alias `np`.
-
-4. Question: What does the NumPy function `np.arange(5)` return?
-   - A) `[0, 1, 2, 3, 4]`
-   - B) `array([0, 1, 2, 3, 4])`
-   - C) `array([1, 2, 3, 4, 5])`
-   - D) `[1, 2, 3, 4, 5]`
-
-   **Answer: A) `[0, 1, 2, 3, 4]`**
-   
-   **Explanation:** The `np.arange(5)` function generates an array with values from 0 to 4 (exclusive), resulting in `[0, 1, 2, 3, 4]`.
-
-5. Question: How do you create a 2D NumPy array with values ranging from 0 to 9?
-   - A) `np.array([0, 1, 2], [3, 4, 5], [6, 7, 8])`
-   - B) `np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])`
-   - C) `np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])`
-   - D) `np.array([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]])`
-
-   **Answer: B) `np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])**
-   
-   **Explanation:** The correct way to create a 2D NumPy array with values ranging from 0 to 9 is using `np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])`.
-
-6. Question: What is the purpose of broadcasting in NumPy?
-   - A) Optimizing array operations for faster computation
-   - B) Adjusting the shape of arrays for element-wise operations
-   - C) Converting arrays into matrices for linear algebra
-   - D) Improving memory efficiency by reducing array size
-
-   **Answer: B) Adjusting the shape of arrays for element-wise operations**
-   
-   **Explanation:** Broadcasting in NumPy is a feature that allows arrays with different shapes to be used together in element-wise operations. It automatically adjusts the shape of smaller arrays to match the shape of larger arrays, facilitating element-wise operations without the need for explicit reshaping.
-
-7. Question: In Pandas, what is the primary data structure used for storing and manipulating data?
-   - A) DataFrame
-   - B) Series
-   - C) Array
-   - D) List
-
-   **Answer: A) DataFrame**
-   
-   **Explanation:** In Pandas, the primary data structure used for storing and manipulating data is the DataFrame. It is a 2-dimensional tabular data structure with labeled rows and columns, similar to a spreadsheet or SQL table.
-
-8. Question: How do you select a specific column named "Age" from a Pandas DataFrame named "df"?
-   - A) `df["Age"]`
-   - B) `df.column("Age")`
-   - C) `df.column.Age`
-   - D) `df[Age]`
-
-   **Answer: A) `df["Age"]`**
-   
-   **Explanation:** To select a specific column from a Pandas DataFrame, you can use the syntax `df["column_name"]`, where "column_name" is the name of the column you want to select.
-
-9. Question: Which Pandas function is used to filter rows based on specific conditions?
-   - A) `filter_rows()`
-   - B) `select()`
-   - C) `query()`
-   - D) `filter()`
-
-   **Answer: C) `query()`**
-   
-   **Explanation:** The `query()` function in Pandas is used to filter rows based on specific conditions. It allows you to write expressions in a SQL-like syntax to perform row selection.
-
-10. Question: What is the purpose of the pd.merge() function in Pandas?
-
-A) Combining two or more DataFrames based on a common key
-B) Computing the mean value of numerical columns in a DataFrame
-C) Sorting the DataFrame rows based on specific criteria
-D) Removing duplicate rows from the DataFrame
-Answer: A) Combining two or more DataFrames based on a common key
-Explanation: The pd.merge() function in Pandas is used for merging (joining) two or more DataFrames based on a common key or index.
+[Why we don't need to scale the label](https://stats.stackexchange.com/questions/111467/is-it-necessary-to-scale-the-target-value-in-addition-to-scaling-features-for-re)
+from sklearn.preprocessing import MinMaxScaler
+help(MinMaxScaler)
+scaler = MinMaxScaler()
+# Notice to prevent data leakage from the test set, we only fit our scaler to the training set
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+# TensorFlow 2.0 Syntax
 
 
-![image](https://github.com/rohayanti/myJupyterNotebook/assets/72117308/3b422108-a59c-4c80-a1c3-91a8cf142889)
+## Import Options
 
+There are several ways you can import Keras from Tensorflow (this is hugely a personal style choice, please use any import methods you prefer). We will use the method shown in the **official TF documentation**.
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+help(Sequential)
+## Creating a Model
+
+There are two ways to create models through the TF 2 Keras API, either pass in a list of layers all at once, or add them one by one.
+
+Let's show both methods (its up to you to choose which method you prefer).
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation
+### Model - as a list of layers
+model = Sequential([
+    Dense(units=2),
+    Dense(units=2),
+    Dense(units=2)
+])
+### Model - adding in layers one by one
+model = Sequential()
+
+model.add(Dense(2))
+model.add(Dense(2))
+model.add(Dense(2))
+Let's go ahead and build a simple model and then compile it by defining our solver
+model = Sequential()
+
+model.add(Dense(4,activation='relu'))
+model.add(Dense(4,activation='relu'))
+model.add(Dense(4,activation='relu'))
+
+# Final output node for prediction
+model.add(Dense(1))
+
+model.compile(optimizer='rmsprop',loss='mse')
+### Choosing an optimizer and loss
+
+Keep in mind what kind of problem you are trying to solve:
+
+    # For a multi-class classification problem
+    model.compile(optimizer='rmsprop',
+                  loss='categorical_crossentropy',
+                  metrics=['accuracy'])
+
+    # For a binary classification problem
+    model.compile(optimizer='rmsprop',
+                  loss='binary_crossentropy',
+                  metrics=['accuracy'])
+
+    # For a mean squared error regression problem
+    model.compile(optimizer='rmsprop',
+                  loss='mse')
+# Training
+
+Below are some common definitions that are necessary to know and understand to correctly utilize Keras:
+
+* Sample: one element of a dataset.
+    * Example: one image is a sample in a convolutional network
+    * Example: one audio file is a sample for a speech recognition model
+* Batch: a set of N samples. The samples in a batch are processed independently, in parallel. If training, a batch results in only one update to the model.A batch generally approximates the distribution of the input data better than a single input. The larger the batch, the better the approximation; however, it is also true that the batch will take longer to process and will still result in only one update. For inference (evaluate/predict), it is recommended to pick a batch size that is as large as you can afford without going out of memory (since larger batches will usually result in faster evaluation/prediction).
+* Epoch: an arbitrary cutoff, generally defined as "one pass over the entire dataset", used to separate training into distinct phases, which is useful for logging and periodic evaluation.
+* When using validation_data or validation_split with the fit method of Keras models, evaluation will be run at the end of every epoch.
+* Within Keras, there is the ability to add callbacks specifically designed to be run at the end of an epoch. Examples of these are learning rate changes and model checkpointing (saving).
+model.fit(X_train,y_train,epochs=250)
+## Evaluation
+
+Let's evaluate our performance on our training set and our test set. We can compare these two performances to check for overfitting.
+model.history.history
+loss = model.history.history['loss']
+sns.lineplot(x=range(len(loss)),y=loss)
+plt.title("Training Loss per Epoch");
+### Compare final evaluation (MSE) on training set and test set.
+
+These should hopefully be fairly close to each other.
+model.metrics_names
+training_score = model.evaluate(X_train,y_train,verbose=0)
+test_score = model.evaluate(X_test,y_test,verbose=0)
+training_score
+test_score
+### Further Evaluations
+test_predictions = model.predict(X_test)
+test_predictions
+pred_df = pd.DataFrame(y_test,columns=['Test Y'])
+pred_df
+test_predictions = pd.Series(test_predictions.reshape(300,))
+test_predictions
+pred_df = pd.concat([pred_df,test_predictions],axis=1)
+pred_df.columns = ['Test Y','Model Predictions']
+pred_df
+Let's compare to the real test labels!
+sns.scatterplot(x='Test Y',y='Model Predictions',data=pred_df)
+pred_df['Error'] = pred_df['Test Y'] - pred_df['Model Predictions']
+sns.histplot(pred_df['Error'],bins=50)
+from sklearn.metrics import mean_absolute_error,mean_squared_error
+mean_absolute_error(pred_df['Test Y'],pred_df['Model Predictions'])
+mean_squared_error(pred_df['Test Y'],pred_df['Model Predictions'])
+# Essentially the same thing, difference just due to precision
+test_score
+#RMSE
+test_score**0.5
+# Predicting on brand new data
+
+What if we just saw a brand new gemstone from the ground? What should we price it at? This is the **exact** same procedure as predicting on a new test data!
+# [[Feature1, Feature2]]
+new_gem = [[998,1000]]
+# Don't forget to scale!
+scaler.transform(new_gem)
+new_gem = scaler.transform(new_gem)
+model.predict(new_gem)
+## Saving and Loading a Model
+from tensorflow.keras.models import load_model
+model.save('my_model.h5')  # creates a HDF5 file 'my_model.h5'
+later_model = load_model('my_model.h5')
+later_model.predict(new_gem)
