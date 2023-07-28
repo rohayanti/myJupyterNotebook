@@ -232,3 +232,60 @@ model.save('my_model.h5')  # creates an HDF5 file 'my_model.h5'
 later_model = load_model('my_model.h5')
 later_model.predict(new_gem)
 ```
+
+# 2.0 ANN - Keras Regression Code Along Project
+
+Let's now apply our knowledge to a more realistic data set. Here we will also focus on feature engineering and cleaning our data!
+
+## The Data
+
+We will be using data from a Kaggle data set: [Kaggle House Sales Prediction](https://www.kaggle.com/harlfoxem/housesalesprediction)
+
+#### Feature Columns
+
+- id: Unique ID for each home sold
+- date: Date of the home sale
+- price: Price of each home sold
+- bedrooms: Number of bedrooms
+- bathrooms: Number of bathrooms, where .5 accounts for a room with a toilet but no shower
+- sqft_living: Square footage of the apartments interior living space
+- sqft_lot: Square footage of the land space
+- floors: Number of floors
+- waterfront: A dummy variable for whether the apartment was overlooking the waterfront or not
+- view: An index from 0 to 4 of how good the view of the property was
+- condition: An index from 1 to 5 on the condition of the apartment
+- grade: An index from 1 to 13, where 1-3 falls short of building construction and design, 7 has an average level of construction and design, and 11-13 have a high quality level of construction and design
+- sqft_above: The square footage of the interior housing space that is above ground level
+- sqft_basement: The square footage of the interior housing space that is below ground level
+- yr_built: The year the house was initially built
+- yr_renovated: The year of the house’s last renovation
+- zipcode: What zipcode area the house is in
+- lat: Latitude
+- long: Longitude
+- sqft_living15: The square footage of interior housing living space for the nearest 15 neighbors
+- sqft_lot15: The square footage of the land lots of the nearest 15 neighbors
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('kc_house_data.csv')
+
+# Exploratory Data Analysis
+df.isnull().sum()
+df.describe().transpose()
+plt.figure(figsize=(12, 8))
+sns.distplot(df['price'])
+sns.countplot(df['bedrooms'])
+plt.figure(figsize=(12, 8))
+sns.scatterplot(x='price', y='sqft_living', data=df)
+sns.boxplot(x='bedrooms', y='price', data=df)
+
+### Predicting on a brand new house
+single_house = df.drop('price', axis=1).iloc[0]
+single_house = scaler.transform(single_house.values.reshape(-1, 19))
+single_house
+model.predict(single_house)
+df.iloc[0]
